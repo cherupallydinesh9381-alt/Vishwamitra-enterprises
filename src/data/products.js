@@ -1,0 +1,124 @@
+const LAPTOP_IMAGES = [
+  'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&q=80',
+  'https://images.unsplash.com/photo-1525547719575-a1d924493059?w=600&q=80',
+  'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=600&q=80',
+  'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=600&q=80',
+  'https://images.unsplash.com/photo-1602080858427-57174f94e7ba?w=600&q=80',
+  'https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=600&q=80',
+  'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=600&q=80',
+  'https://images.unsplash.com/photo-1629131727162-584119e50d64?w=600&q=80',
+];
+
+const BRAND_MODELS = {
+  Dell: [
+    { name: 'Inspiron 15 3530', processor: 'Intel Core i5-1335U', ram: '16GB', storage: '512GB SSD', display: '15.6" FHD', basePrice: 54999 },
+    { name: 'Inspiron 14 5430', processor: 'Intel Core i7-1355U', ram: '16GB', storage: '1TB SSD', display: '14" FHD', basePrice: 68999 },
+    { name: 'Latitude 3540', processor: 'Intel Core i5-1335U', ram: '8GB', storage: '256GB SSD', display: '15.6" FHD', basePrice: 48999 },
+    { name: 'Latitude 5440', processor: 'Intel Core i7-1365U', ram: '16GB', storage: '512GB SSD', display: '14" FHD', basePrice: 89999 },
+    { name: 'Vostro 3520', processor: 'Intel Core i3-1215U', ram: '8GB', storage: '512GB SSD', display: '15.6" FHD', basePrice: 39999 },
+    { name: 'Vostro 5620', processor: 'Intel Core i5-1240P', ram: '16GB', storage: '512GB SSD', display: '16" FHD+', basePrice: 62999 },
+    { name: 'XPS 13 9340', processor: 'Intel Core Ultra 7', ram: '16GB', storage: '512GB SSD', display: '13.4" OLED', basePrice: 149999 },
+    { name: 'G15 5530', processor: 'Intel Core i7-13650HX', ram: '16GB', storage: '1TB SSD', display: '15.6" FHD 165Hz', basePrice: 109999 },
+  ],
+  HP: [
+    { name: 'Pavilion 15-eg3009TU', processor: 'Intel Core i5-1335U', ram: '16GB', storage: '512GB SSD', display: '15.6" FHD', basePrice: 56999 },
+    { name: 'Pavilion x360 14', processor: 'Intel Core i5-1335U', ram: '8GB', storage: '512GB SSD', display: '14" FHD Touch', basePrice: 59999 },
+    { name: 'Victus 15-fa0165TX', processor: 'Intel Core i5-12450H', ram: '16GB', storage: '512GB SSD', display: '15.6" FHD 144Hz', basePrice: 74999 },
+    { name: 'Victus 16-s0055AX', processor: 'AMD Ryzen 7 7840HS', ram: '16GB', storage: '512GB SSD', display: '16.1" FHD 144Hz', basePrice: 89999 },
+    { name: 'ProBook 450 G10', processor: 'Intel Core i5-1335U', ram: '16GB', storage: '512GB SSD', display: '15.6" FHD', basePrice: 72999 },
+    { name: 'EliteBook 840 G10', processor: 'Intel Core i7-1355U', ram: '16GB', storage: '512GB SSD', display: '14" FHD', basePrice: 119999 },
+    { name: 'Envy x360 13', processor: 'AMD Ryzen 7 7730U', ram: '16GB', storage: '512GB SSD', display: '13.3" FHD Touch', basePrice: 84999 },
+    { name: 'Omen 16-wf1093TX', processor: 'Intel Core i7-13700HX', ram: '16GB', storage: '1TB SSD', display: '16.1" QHD 165Hz', basePrice: 139999 },
+  ],
+  Lenovo: [
+    { name: 'ThinkPad E14 Gen 5', processor: 'Intel Core i5-1335U', ram: '16GB', storage: '512GB SSD', display: '14" FHD', basePrice: 64999 },
+    { name: 'ThinkPad X1 Carbon Gen 11', processor: 'Intel Core i7-1365U', ram: '16GB', storage: '512GB SSD', display: '14" WUXGA', basePrice: 159999 },
+    { name: 'ThinkPad L14 Gen 4', processor: 'AMD Ryzen 5 7530U', ram: '8GB', storage: '256GB SSD', display: '14" FHD', basePrice: 52999 },
+    { name: 'IdeaPad Slim 3 15', processor: 'Intel Core i3-1215U', ram: '8GB', storage: '512GB SSD', display: '15.6" FHD', basePrice: 38999 },
+    { name: 'IdeaPad Slim 5 14', processor: 'AMD Ryzen 5 7530U', ram: '16GB', storage: '512GB SSD', display: '14" FHD', basePrice: 54999 },
+    { name: 'Legion 5 15IRX9', processor: 'Intel Core i7-13650HX', ram: '16GB', storage: '512GB SSD', display: '15.6" FHD 165Hz', basePrice: 114999 },
+    { name: 'Legion Pro 5 16IRX8', processor: 'Intel Core i7-13700HX', ram: '16GB', storage: '1TB SSD', display: '16" WQXGA 165Hz', basePrice: 149999 },
+    { name: 'Yoga 7i 14', processor: 'Intel Core i5-1335U', ram: '16GB', storage: '512GB SSD', display: '14" 2.2K Touch', basePrice: 79999 },
+  ],
+  Acer: [
+    { name: 'Aspire 3 A315-24P', processor: 'AMD Ryzen 3 7320U', ram: '8GB', storage: '512GB SSD', display: '15.6" FHD', basePrice: 32999 },
+    { name: 'Aspire 5 A515-58', processor: 'Intel Core i5-1335U', ram: '16GB', storage: '512GB SSD', display: '15.6" FHD', basePrice: 49999 },
+    { name: 'Aspire 7 A715-76G', processor: 'Intel Core i5-12450H', ram: '16GB', storage: '512GB SSD', display: '15.6" FHD', basePrice: 64999 },
+    { name: 'Nitro 5 AN515-58', processor: 'Intel Core i5-12500H', ram: '16GB', storage: '512GB SSD', display: '15.6" FHD 144Hz', basePrice: 79999 },
+    { name: 'Nitro 16 AN16-41', processor: 'AMD Ryzen 7 7735HS', ram: '16GB', storage: '512GB SSD', display: '16" WUXGA 165Hz', basePrice: 99999 },
+    { name: 'Predator Helios 16', processor: 'Intel Core i7-13700HX', ram: '16GB', storage: '1TB SSD', display: '16" WQXGA 240Hz', basePrice: 169999 },
+    { name: 'Swift Go 14', processor: 'Intel Core Ultra 5', ram: '16GB', storage: '512GB SSD', display: '14" OLED', basePrice: 89999 },
+    { name: 'TravelMate P4 14', processor: 'Intel Core i5-1335U', ram: '16GB', storage: '512GB SSD', display: '14" FHD', basePrice: 59999 },
+  ],
+  Asus: [
+    { name: 'Vivobook 15 X1504VA', processor: 'Intel Core i5-1335U', ram: '16GB', storage: '512GB SSD', display: '15.6" FHD', basePrice: 52999 },
+    { name: 'Vivobook Go 14', processor: 'AMD Ryzen 5 7520U', ram: '8GB', storage: '512GB SSD', display: '14" FHD', basePrice: 36999 },
+    { name: 'Zenbook 14 UX3405', processor: 'Intel Core Ultra 7', ram: '16GB', storage: '1TB SSD', display: '14" 3K OLED', basePrice: 119999 },
+    { name: 'Zenbook 14 Flip OLED', processor: 'Intel Core i7-1360P', ram: '16GB', storage: '512GB SSD', display: '14" 2.8K OLED Touch', basePrice: 109999 },
+    { name: 'ROG Strix G16 G614', processor: 'Intel Core i7-13650HX', ram: '16GB', storage: '512GB SSD', display: '16" FHD 165Hz', basePrice: 129999 },
+    { name: 'ROG Zephyrus G14', processor: 'AMD Ryzen 9 7940HS', ram: '16GB', storage: '1TB SSD', display: '14" QHD 165Hz', basePrice: 154999 },
+    { name: 'TUF Gaming A15 FA507', processor: 'AMD Ryzen 7 7735HS', ram: '16GB', storage: '512GB SSD', display: '15.6" FHD 144Hz', basePrice: 84999 },
+    { name: 'ExpertBook B5', processor: 'Intel Core i5-1335U', ram: '16GB', storage: '512GB SSD', display: '14" FHD', basePrice: 67999 },
+  ],
+  Apple: [
+    { name: 'MacBook Air M2 13"', processor: 'Apple M2 8-core', ram: '8GB', storage: '256GB SSD', display: '13.6" Liquid Retina', basePrice: 99900 },
+    { name: 'MacBook Air M2 15"', processor: 'Apple M2 8-core', ram: '8GB', storage: '256GB SSD', display: '15.3" Liquid Retina', basePrice: 134900 },
+    { name: 'MacBook Air M3 13"', processor: 'Apple M3 8-core', ram: '8GB', storage: '256GB SSD', display: '13.6" Liquid Retina', basePrice: 114900 },
+    { name: 'MacBook Air M3 15"', processor: 'Apple M3 8-core', ram: '16GB', storage: '512GB SSD', display: '15.3" Liquid Retina', basePrice: 154900 },
+    { name: 'MacBook Pro M3 14"', processor: 'Apple M3 8-core', ram: '8GB', storage: '512GB SSD', display: '14.2" Liquid Retina XDR', basePrice: 169900 },
+    { name: 'MacBook Pro M3 Pro 14"', processor: 'Apple M3 Pro 11-core', ram: '18GB', storage: '512GB SSD', display: '14.2" Liquid Retina XDR', basePrice: 199900 },
+    { name: 'MacBook Pro M3 Max 16"', processor: 'Apple M3 Max 14-core', ram: '36GB', storage: '1TB SSD', display: '16.2" Liquid Retina XDR', basePrice: 349900 },
+  ],
+  MSI: [
+    { name: 'Katana 15 B13VFK', processor: 'Intel Core i7-13620H', ram: '16GB', storage: '1TB SSD', display: '15.6" FHD 144Hz', basePrice: 109999 },
+    { name: 'Katana 17 B13VGK', processor: 'Intel Core i7-13650HX', ram: '16GB', storage: '512GB SSD', display: '17.3" FHD 144Hz', basePrice: 119999 },
+    { name: 'Cyborg 15 A12VF', processor: 'Intel Core i7-12650H', ram: '16GB', storage: '512GB SSD', display: '15.6" FHD 144Hz', basePrice: 89999 },
+    { name: 'Thin GF63 12UC', processor: 'Intel Core i5-12450H', ram: '8GB', storage: '512GB SSD', display: '15.6" FHD 144Hz', basePrice: 64999 },
+    { name: 'Raider GE78 HX', processor: 'Intel Core i9-13980HX', ram: '32GB', storage: '2TB SSD', display: '17" QHD+ 240Hz', basePrice: 289999 },
+    { name: 'Stealth 16 Studio', processor: 'Intel Core i7-13700H', ram: '16GB', storage: '1TB SSD', display: '16" QHD+ 240Hz', basePrice: 189999 },
+    { name: 'Modern 14 C13M', processor: 'Intel Core i5-1335U', ram: '16GB', storage: '512GB SSD', display: '14" FHD', basePrice: 59999 },
+  ],
+  Samsung: [
+    { name: 'Galaxy Book3 360', processor: 'Intel Core i5-1335U', ram: '16GB', storage: '512GB SSD', display: '13.3" AMOLED Touch', basePrice: 89999 },
+    { name: 'Galaxy Book3 Pro', processor: 'Intel Core i7-1360P', ram: '16GB', storage: '512GB SSD', display: '14" AMOLED', basePrice: 109999 },
+    { name: 'Galaxy Book3 Ultra', processor: 'Intel Core i7-13700H', ram: '16GB', storage: '1TB SSD', display: '16" 3K AMOLED 120Hz', basePrice: 189999 },
+    { name: 'Galaxy Book4 Edge', processor: 'Snapdragon X Elite', ram: '16GB', storage: '512GB SSD', display: '14" AMOLED', basePrice: 124999 },
+    { name: 'Galaxy Book4 360', processor: 'Intel Core Ultra 5', ram: '16GB', storage: '512GB SSD', display: '15.6" AMOLED Touch', basePrice: 99999 },
+    { name: 'Galaxy Book4 Pro 360', processor: 'Intel Core Ultra 7', ram: '16GB', storage: '1TB SSD', display: '16" 3K AMOLED Touch', basePrice: 169999 },
+  ],
+};
+
+let id = 1;
+export const products = [];
+
+Object.entries(BRAND_MODELS).forEach(([brand, models]) => {
+  models.forEach((model, index) => {
+    const rating = +(4 + Math.random() * 0.9).toFixed(1);
+    const stock = Math.floor(Math.random() * 20) + 1;
+    products.push({
+      id: id++,
+      name: model.name,
+      brand,
+      processor: model.processor,
+      ram: model.ram,
+      storage: model.storage,
+      display: model.display,
+      price: model.basePrice,
+      rating: Math.min(rating, 5),
+      stock,
+      image: LAPTOP_IMAGES[index % LAPTOP_IMAGES.length],
+    });
+  });
+});
+
+export const getFeaturedProducts = (count = 8) =>
+  [...products].sort((a, b) => b.rating - a.rating).slice(0, count);
+
+export const getProductById = (productId) =>
+  products.find((p) => p.id === Number(productId));
+
+export const getBrandsFromProducts = () =>
+  [...new Set(products.map((p) => p.brand))].sort();
+
+export const formatPrice = (price) =>
+  new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(price);

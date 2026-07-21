@@ -1,0 +1,130 @@
+.hero {
+  background: var(--gradient-secondary);
+  color: #fff;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  opacity: 0.9;
+  font-size: 1.05rem;
+}
+
+.main {
+  background: var(--color-bg);
+}
+
+.filters {
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.searchWrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--color-bg);
+  border-radius: var(--radius-md);
+  margin-bottom: 1rem;
+  border: 2px solid var(--color-border);
+}
+
+.searchWrap svg {
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+.searchWrap input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: var(--color-text);
+  outline: none;
+}
+
+.filterRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+.filterRow select {
+  padding: 0.65rem 1rem;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.resultCount {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.empty {
+  text-align: center;
+  padding: 3rem;
+  color: var(--color-text-muted);
+}
+
+.empty p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.pageBtn {
+  padding: 0.5rem 0.85rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all var(--transition);
+}
+
+.pageBtn:hover:not(:disabled) {
+  background: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+}
+
+.pageBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.pageBtn.active {
+  background: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+}
+
+@media (min-width: 576px) {
+  .filterRow {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

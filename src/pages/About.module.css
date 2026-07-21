@@ -1,0 +1,103 @@
+.hero {
+  background: var(--gradient-primary);
+  color: #fff;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  opacity: 0.92;
+}
+
+.main {
+  background: var(--color-bg);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  padding: 2rem;
+}
+
+.card h2 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;   
+}
+
+.card p {
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+.story {
+  padding: 2rem;
+  margin-bottom: 3rem;
+}
+
+.story h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.story p {
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.story p:last-child {
+  margin-bottom: 0;
+}
+
+.whySection {
+  margin-top: 1rem;
+}
+
+.whyGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.whyCard {
+  padding: 1.75rem;
+  text-align: center;
+}
+
+.icon {
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+}
+
+.whyCard h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.whyCard p {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

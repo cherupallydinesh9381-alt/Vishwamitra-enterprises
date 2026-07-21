@@ -1,0 +1,121 @@
+.brands {
+  background: var(--color-bg);
+}
+
+.brandGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.products {
+  background: linear-gradient(180deg, var(--color-bg) 0%, rgba(212, 175, 55, 0.04) 100%);
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.services {
+  background: var(--color-bg);
+}
+
+.serviceGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.reviews {
+  background: linear-gradient(180deg, rgba(10, 14, 26, 0.04) 0%, var(--color-bg) 100%);
+}
+
+.reviewGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.reviewCard {
+  padding: 1.75rem;
+  position: relative;
+}
+
+.quote {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  opacity: 0.4;
+  margin-bottom: 0.75rem;
+}
+
+.reviewCard p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.reviewFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reviewFooter strong {
+  font-size: 0.95rem;
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+  color: var(--color-primary);
+  font-size: 0.85rem;
+}
+
+.cta {
+  text-align: center;
+}
+
+.ctaContent h2 {
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.ctaContent p {
+  font-size: 1.05rem;
+  opacity: 0.9;
+  max-width: 550px;
+  margin: 0 auto 1.75rem;
+}
+
+.ctaButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.centerBtn {
+  text-align: center;
+}
+
+.centerBtn .btn {
+  margin-top: 0.5rem;
+}
+
+.cta .btnOutline:hover {
+  background: var(--color-primary);
+  color: var(--color-secondary) !important;
+  border-color: var(--color-primary) !important;
+}
+
+.ctaOutline {
+  border-color: var(--color-primary) !important;
+  color: var(--color-primary-light) !important;
+}

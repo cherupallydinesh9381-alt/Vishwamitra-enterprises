@@ -1,0 +1,97 @@
+import {
+  SiDell,
+  SiHp,
+  SiLenovo,
+  SiAcer,
+  SiAsus,
+  SiApple,
+  SiMsi,
+  SiSamsung,
+  SiLg,
+} from 'react-icons/si';
+import { FaMicrosoft } from 'react-icons/fa6';
+
+export const brands = [
+  {
+    id: 1,
+    name: 'Dell',
+    icon: SiDell,
+    color: '#007DB8',
+    description: 'Reliable business and consumer laptops with excellent build quality.',
+    productCount: 8,
+  },
+  {
+    id: 2,
+    name: 'HP',
+    icon: SiHp,
+    color: '#0096D6',
+    description: 'Innovative laptops for work, gaming, and everyday computing.',
+    productCount: 8,
+  },
+  {
+    id: 3,
+    name: 'Lenovo',
+    icon: SiLenovo,
+    color: '#E2231A',
+    description: 'Industry-leading ThinkPads and powerful Legion gaming machines.',
+    productCount: 8,
+  },
+  {
+    id: 4,
+    name: 'Acer',
+    icon: SiAcer,
+    color: '#83B81A',
+    description: 'Affordable laptops and high-performance Nitro gaming series.',
+    productCount: 8,
+  },
+  {
+    id: 5,
+    name: 'Asus',
+    icon: SiAsus,
+    color: '#00529B',
+    description: 'Premium Zenbooks, versatile Vivobooks, and ROG gaming laptops.',
+    productCount: 8,
+  },
+  {
+    id: 6,
+    name: 'Apple',
+    icon: SiApple,
+    color: '#555555',
+    description: 'MacBook Air and Pro with powerful M-series chips.',
+    productCount: 7,
+  },
+  {
+    id: 7,
+    name: 'Msi',
+    icon: SiMsi,
+    color: '#FF0000',
+    description: 'High-performance gaming laptops and creator workstations.',
+    productCount: 7,
+  },
+  {
+    id: 8,
+    name: 'Samsung',
+    icon: SiSamsung,
+    color: '#1428A0',
+    description: 'Stunning AMOLED displays in the Galaxy Book series.',
+    productCount: 6,
+  },
+  {
+    id: 9,
+    name: 'LG',
+    icon: SiLg,
+    color: '#A50034',
+    description: 'Ultra-light Gram laptops with exceptional battery life.',
+    productCount: 4,
+  },
+  {
+    id: 10,
+    name: 'Microsoft Surface',
+    icon: FaMicrosoft,
+    color: '#00A4EF',
+    description: 'Premium 2-in-1 devices with seamless Windows integration.',
+    productCount: 4,
+  },
+];
+
+export const getBrandByName = (name) => brands.find((b) => b.name === name);
