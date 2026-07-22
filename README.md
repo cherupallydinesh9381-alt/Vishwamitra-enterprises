@@ -1,3 +1,95 @@
+# 🖥️ Vishwamitra Enterprises
+
+A modern, responsive and premium business website developed using **React**, **Vite**, and **Tailwind CSS**. The project features elegant UI/UX, smooth animations, responsive layouts, and optimized performance.
+
+🌐 **Live Website:** https://vishwamitra-enterprises.netlify.app/
+
+---
+
+## ✨ Features
+
+- 🚀 Modern & Professional UI
+- 🌙 Light & Dark Theme
+- 📱 Fully Responsive Design
+- ⚡ Built with Vite
+- 🎨 Smooth Animations
+- 💻 Product Showcase
+- 🤝 Brand Carousel
+- 📞 Contact Form
+- 🔍 SEO Friendly
+
+---
+
+## 🛠 Tech Stack
+
+- React.js
+- Vite
+- Tailwind CSS
+- JavaScript
+- HTML5
+- CSS3
+
+---
+
+## 📸 Project Screenshots
+
+### 🏠 Home Page
+
+![Home Page](docs/screenshots/homepage.png)
+
+### 💻 Products Page
+
+![Products Page](docs/screenshots/productspage.png)
+
+### 🛠 Services Page
+
+![Services Page](docs/screenshots/servicespage.png)
+
+### 🤝 Brands Section
+
+![Brands Section](docs/screenshots/brandspage.png)
+
+
+### 🏢 About Page
+
+![About Page](docs/screenshots/aboutpage.png)
+
+### 📞 Contact Page
+
+![Contact Page](docs/screenshots/contactpage.png)
+
+---
+
+## 🎥 Demo Video
+
+[▶️ Download Project Demo](docs/screenshots/demovideo/Vishwamitra%20Enterprises%20-Demo.mp4)
+
+---
+
+## 🚀 Getting Started
+
+```bash
+git clone https://github.com/cherupallydinesh9381-alt/Vishwamitra-enterprises.git
+cd Vishwamitra-enterprises
+npm install
+npm run dev
+```
+
+---
+
+## 🌐 Live Demo
+
+https://vishwamitra-enterprises.netlify.app/
+
+---
+
+## 👨‍💻 Developed By
+
+**Dinesh Cherupally**
+
+Intern | Frontend Developer
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
